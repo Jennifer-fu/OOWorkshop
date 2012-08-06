@@ -30,19 +30,16 @@ namespace OOWorkshop
 
         public override bool Equals(object obj)
         {
-            var meter = ConvertToMeter(obj);
-            return meter.Number.Equals(Number);
+            if (obj is Decimeter) 
+                return IsEqual((obj as Decimeter).ConvertToCM(),ConvertToCM());
+            if (obj is Meter) 
+                return IsEqual((obj as Meter).ConvertToCM(),ConvertToCM());
+            return false;
         }
 
-        private Meter ConvertToMeter(object obj)
+        public bool IsEqual(double d1, double d2)
         {
-            if (obj is Decimeter) return ConvertDecimeterToMeter(obj as Decimeter);
-            return (obj as Meter);
-        }
-
-        private Meter ConvertDecimeterToMeter(Decimeter decimeter)
-        {
-            return new Meter(decimeter.Number/10);
+            return Math.Abs(d1 - d2) <= 0.000001;
         }
 
         public override int GetHashCode()
