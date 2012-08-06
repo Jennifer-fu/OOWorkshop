@@ -17,9 +17,9 @@ namespace OOWorkshop
             return 100;
         }
 
-        public static Meter operator +(Meter m1, Meter m2)
+        public static Meter operator +(Meter m1, Length length)
         {
-            return new Meter(m1.Number + m2.Number);
+            return new Meter((m1.ConvertToCM()+ length.ConvertToCM())/m1.Factor());
         }
 
         public static Meter operator -(Meter m1, Meter m2)

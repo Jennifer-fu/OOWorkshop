@@ -53,6 +53,4 @@ namespace OOWorkshopTest
             var meaningless = oneMeter - threeMeters;
         }
     }
-
-    
 }
