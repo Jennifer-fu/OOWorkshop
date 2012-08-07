@@ -21,16 +21,5 @@ namespace OOWorkshop
         {
             return new Centimeter((cm.ConvertToCM() + length.ConvertToCM())/cm.Factor());
         }
-
-        public override bool Equals(object obj)
-        {
-            var centimeter = obj as Centimeter;
-            return centimeter.Number.Equals(Number);
-        }
-
-        public override int GetHashCode()
-        {
-            return Number.GetHashCode();
-        }
     }
 }
