@@ -39,11 +39,8 @@ namespace OOWorkshop
 
         public override bool Equals(object obj)
         {
-            if (obj is Decimeter)
-                return IsEqual((obj as Decimeter).ConvertToCM(), ConvertToCM());
-            if (obj is Meter)
-                return IsEqual((obj as Meter).ConvertToCM(), ConvertToCM());
-            return IsEqual((obj as Centimeter).ConvertToCM(), ConvertToCM());
+            var length = (obj as Length);
+            return IsEqual(length.ConvertToCM(), ConvertToCM());
         }
 
         public bool IsEqual(double d1, double d2)
