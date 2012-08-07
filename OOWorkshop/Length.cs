@@ -17,30 +17,30 @@ namespace OOWorkshop
 
         public double Number { get; private set; }
 
-        public double ConvertToCM()
+        public double ToBaseUnit()
         {
             return Number*(double) Unit;
         }
 
         public static Length operator +(Length length1, Length length2)
         {
-            double number = (length1.ConvertToCM() + length2.ConvertToCM());
+            double number = (length1.ToBaseUnit() + length2.ToBaseUnit());
             return new Length(number, Unit.Centimeter);
         }
 
         public static Length operator -(Length length1, Length length2)
         {
-            var length1ToCM = length1.ConvertToCM();
-            var length2ToCM = length2.ConvertToCM();
-            if (length1ToCM - length2ToCM < 0) throw new NegativeValueException();
+            var length1ToCM = length1.ToBaseUnit();
+            var length2ToCM = length2.ToBaseUnit();
             double number = length1ToCM - length2ToCM;
+            if (number < 0) throw new NegativeValueException();
             return new Length(number, Unit.Centimeter);
         }
 
         public override bool Equals(object obj)
         {
             var length = (obj as Length);
-            return IsEqual(length.ConvertToCM(), ConvertToCM());
+            return IsEqual(length.ToBaseUnit(), ToBaseUnit());
         }
 
         public bool IsEqual(double d1, double d2)
@@ -50,7 +50,7 @@ namespace OOWorkshop
 
         public override int GetHashCode()
         {
-            return Number.GetHashCode();
+            return ToBaseUnit().GetHashCode();
         }
     }
 }
