@@ -21,16 +21,5 @@ namespace OOWorkshop
         {
             return new Decimeter((dm.ConvertToCM() + length.ConvertToCM()) / dm.Factor());
         }
-
-        public override bool Equals(object obj)
-        {
-            var decimeter = obj as Decimeter;
-            return decimeter.Number.Equals(Number);
-        }
-
-        public override int GetHashCode()
-        {
-            return Number.GetHashCode();
-        }
     }
 }
