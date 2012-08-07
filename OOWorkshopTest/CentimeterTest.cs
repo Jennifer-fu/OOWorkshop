@@ -15,27 +15,27 @@ namespace OOWorkshopTest
         [TestFixtureSetUp]
         public void Setup()
         {
-            oneCM = Length.CreateLength(1,1);
+            oneCM = new Length(1, Unit.Centimeter);
         }
 
         [Test]
         public void should_equal_2cm_given_1cm_plus_1cm()
         {
-            (oneCM + oneCM).should_be(Length.CreateLength(2,1));
+            (oneCM + oneCM).should_be(new Length(2, Unit.Centimeter));
         }
 
         [Test]
         public void should_equal_11_centimeters_given_1_centimeter_and_1_decimeter()
         {
-            var oneDM = Length.CreateLength(1,10);
-            (oneCM + oneDM).should_be(Length.CreateLength(11,1));
+            var oneDM = new Length(1, Unit.Decimeter);
+            (oneCM + oneDM).should_be(new Length(11, Unit.Centimeter));
         }
 
         [Test]
         public void should_equal_101_centimeters_given_1_centimeter_and_1_meter()
         {
-            var oneM = Length.CreateLength(1,100);
-            (oneCM + oneM).should_be(Length.CreateLength(101,1));
+            var oneM = new Length(1, Unit.Meter);
+            (oneCM + oneM).should_be(new Length(101, Unit.Centimeter));
         }
     }
 }

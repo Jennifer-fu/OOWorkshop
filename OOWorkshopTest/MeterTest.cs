@@ -17,9 +17,9 @@ namespace OOWorkshopTest
         [TestFixtureSetUp]
         public void setUp()
         {
-            oneMeter = Length.CreateLength(1,100);
-            twoMeters = Length.CreateLength(2,100);
-            threeMeters = Length.CreateLength(3,100);
+            oneMeter = new Length(1, Unit.Meter);
+            twoMeters = new Length(2, Unit.Meter);
+            threeMeters = new Length(3, Unit.Meter);
         }
 
         [Test]

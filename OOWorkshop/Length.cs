@@ -7,17 +7,7 @@ namespace OOWorkshop
 {
     public class Length
     {
-        public static Length CreateLength(double number, int factor)
-        {
-//            return new Length(number,factor);
-            if (factor == 100)
-                return new Length(number, Unit.Meter);
-            if (factor == 10)
-                return new Length(number, Unit.Decimeter);
-            return new Length(number, Unit.Centimeter);
-        }
-
-        private Length(double number, Unit unit)
+        public Length(double number, Unit unit)
         {
             Number = number;
             Unit = unit;
@@ -25,14 +15,7 @@ namespace OOWorkshop
 
         protected Unit Unit { get; private set; }
 
-//        private Length(double number, int factor)
-//        {
-//            Number = number;
-//            Factor = factor;
-//        }
-
-        public double Number { get; protected set; }
-//        public double Factor { get; protected set; }
+        public double Number { get; private set; }
 
         public double ConvertToCM()
         {
@@ -41,7 +24,8 @@ namespace OOWorkshop
 
         public static Length operator +(Length length1, Length length2)
         {
-            return CreateLength((length1.ConvertToCM() + length2.ConvertToCM()), 1);
+            double number = (length1.ConvertToCM() + length2.ConvertToCM());
+            return new Length(number, Unit.Centimeter);
         }
 
         public static Length operator -(Length length1, Length length2)
@@ -49,7 +33,8 @@ namespace OOWorkshop
             var length1ToCM = length1.ConvertToCM();
             var length2ToCM = length2.ConvertToCM();
             if (length1ToCM - length2ToCM < 0) throw new NegativeValueException();
-            return CreateLength(length1ToCM - length2ToCM, 1);
+            double number = length1ToCM - length2ToCM;
+            return new Length(number, Unit.Centimeter);
         }
 
         public override bool Equals(object obj)
