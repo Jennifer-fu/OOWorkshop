@@ -26,10 +26,12 @@ namespace OOWorkshop
             return new Length((length1.ConvertToCM() + length2.ConvertToCM()),1);
         }
 
-        public static Length operator -(Length m1, Length m2)
+        public static Length operator -(Length length1, Length length2)
         {
-            if (m1.Number - m2.Number < 0) throw new NegativeValueException();
-            return new Length(m1.Number - m2.Number,100);
+            var length1ToCM = length1.ConvertToCM();
+            var length2ToCM = length2.ConvertToCM();
+            if (length1ToCM - length2ToCM < 0) throw new NegativeValueException();
+            return new Length(length1ToCM - length2ToCM,1);
         }
 
         public override bool Equals(object obj)
