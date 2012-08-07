@@ -19,13 +19,13 @@ namespace OOWorkshop
 
         public double ToBaseUnit()
         {
-            return Number*(double) Unit;
+            return Number*(int) Unit;
         }
 
         public static Length operator +(Length length1, Length length2)
         {
             double number = (length1.ToBaseUnit() + length2.ToBaseUnit());
-            return new Length(number, Unit.Centimeter);
+            return new Length(number, Unit.Millimeter);
         }
 
         public static Length operator -(Length length1, Length length2)
@@ -34,7 +34,7 @@ namespace OOWorkshop
             var length2ToCM = length2.ToBaseUnit();
             double number = length1ToCM - length2ToCM;
             if (number < 0) throw new NegativeValueException();
-            return new Length(number, Unit.Centimeter);
+            return new Length(number, Unit.Millimeter);
         }
 
         public override bool Equals(object obj)

@@ -2,8 +2,9 @@
 {
     public enum Unit
     {
-        Meter = 100,
-        Decimeter = 10,
-        Centimeter = 1
+        Meter = 1000,
+        Decimeter = 100,
+        Centimeter = 10,
+        Millimeter = 1
     }
 }
