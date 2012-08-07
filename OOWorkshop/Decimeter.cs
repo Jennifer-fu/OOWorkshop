@@ -7,7 +7,7 @@ namespace OOWorkshop
 {
     public class Decimeter : Length
     {
-        public Decimeter(double number):base(number,10)
+        private Decimeter(double number):base(number,10)
         {
         }
     }

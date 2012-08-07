@@ -7,7 +7,7 @@ namespace OOWorkshop
 {
     public class Centimeter : Length
     {
-        public Centimeter(double number):base(number,1)
+        private Centimeter(double number):base(number,1)
         {
         }
     }

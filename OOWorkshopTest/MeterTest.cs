@@ -17,9 +17,9 @@ namespace OOWorkshopTest
         [TestFixtureSetUp]
         public void setUp()
         {
-            oneMeter = new Meter(1);
-            twoMeters = new Meter(2);
-            threeMeters = new Meter(3);
+            oneMeter = new Length(1,100);
+            twoMeters = new Length(2,100);
+            threeMeters = new Length(3,100);
         }
 
         [Test]

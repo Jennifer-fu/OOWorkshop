@@ -7,7 +7,7 @@ namespace OOWorkshop
 {
     public class Length
     {
-        protected Length(double number, int factor)
+        public Length(double number, int factor)
         {
             Number = number;
             Factor = factor;
@@ -23,18 +23,13 @@ namespace OOWorkshop
 
         public static Length operator +(Length length1, Length length2)
         {
-            if (length1 is Meter)
-                return new Meter((length1.ConvertToCM() + length2.ConvertToCM())/length1.Factor);
-            if (length1 is Decimeter)
-                return new Decimeter((length1.ConvertToCM() + length2.ConvertToCM())/length1.Factor);
-            return new Centimeter((length1.ConvertToCM() + length2.ConvertToCM())/length1.Factor);
+            return new Length((length1.ConvertToCM() + length2.ConvertToCM()),1);
         }
-
 
         public static Length operator -(Length m1, Length m2)
         {
             if (m1.Number - m2.Number < 0) throw new NegativeValueException();
-            return new Meter(m1.Number - m2.Number);
+            return new Length(m1.Number - m2.Number,100);
         }
 
         public override bool Equals(object obj)

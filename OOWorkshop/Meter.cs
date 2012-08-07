@@ -7,7 +7,7 @@ namespace OOWorkshop
 {
     public class Meter : Length
     {
-        public Meter(double number):base(number,100)
+        private Meter(double number):base(number,100)
         {
         }
     }
