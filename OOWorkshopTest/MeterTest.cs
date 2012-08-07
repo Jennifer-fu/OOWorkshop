@@ -10,9 +10,9 @@ namespace OOWorkshopTest
     [TestFixture]
     public class MeterTest
     {
-        private Meter oneMeter;
-        private Meter twoMeters;
-        private Meter threeMeters;
+        private Length oneMeter;
+        private Length twoMeters;
+        private Length threeMeters;
 
         [TestFixtureSetUp]
         public void setUp()

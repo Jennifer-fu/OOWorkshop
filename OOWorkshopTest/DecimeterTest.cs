@@ -11,7 +11,7 @@ namespace OOWorkshopTest
     class DecimeterTest
     {
         private Decimeter oneDM;
-        private Meter oneM;
+        private Length oneM;
         private Decimeter twoDMs;
 
         [TestFixtureSetUp]

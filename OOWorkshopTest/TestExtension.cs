@@ -5,12 +5,12 @@ namespace OOWorkshopTest
 {
     public static class TestExtension
     {
-        public static void should_be(this Meter meter, Meter expectedMeter)
+        public static void should_be(this Length meter, Length expectedMeter)
         {
             Assert.AreEqual(expectedMeter, meter);
         }
 
-        public static void should_not_be(this Meter meter, Meter expectedMeter)
+        public static void should_not_be(this Length meter, Length expectedMeter)
         {
             Assert.AreNotEqual(expectedMeter, meter);
         }
@@ -25,24 +25,15 @@ namespace OOWorkshopTest
             Assert.AreNotEqual(expectedDecimeter, decimeter);
         }
 
-        public static void should_be(this Decimeter decimeter, Meter expectedMeter)
+        public static void should_be(this Decimeter decimeter, Length expectedMeter)
         {
             Assert.AreEqual(expectedMeter, decimeter);
         }
 
-        public static void should_be(this Centimeter centimeter, Centimeter expectedCentimeter)
-        {
-            Assert.AreEqual(centimeter, expectedCentimeter);
-        }
-
-        public static void should_be(this Centimeter centimeter, Decimeter expectedDecimeter)
+   
+        public static void should_be(this Length centimeter, Decimeter expectedDecimeter)
         {
             Assert.AreEqual(centimeter, expectedDecimeter);
-        }
-
-        public static void should_be(this Centimeter centimeter, Meter expectedMeter)
-        {
-            Assert.AreEqual(centimeter, expectedMeter);
         }
     }
 }

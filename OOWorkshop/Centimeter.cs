@@ -16,10 +16,5 @@ namespace OOWorkshop
         {
             return 1;
         }
-
-        public static Centimeter operator +(Centimeter cm, Length length)
-        {
-            return new Centimeter((cm.ConvertToCM() + length.ConvertToCM())/cm.Factor());
-        }
     }
 }

@@ -10,7 +10,7 @@ namespace OOWorkshopTest
     [TestFixture]
     class CentimeterTest
     {
-        private Centimeter oneCM;
+        private Length oneCM;
 
         [TestFixtureSetUp]
         public void Setup()
