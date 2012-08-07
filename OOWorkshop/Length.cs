@@ -13,26 +13,14 @@ namespace OOWorkshop
             Unit = unit;
         }
 
-        protected Unit Unit { get; private set; }
-
-        public double Number { get; private set; }
-
-        public double ToBaseUnit()
-        {
-            return Number*(int) Unit;
-        }
-
         public static Length operator +(Length length1, Length length2)
         {
-            double number = (length1.ToBaseUnit() + length2.ToBaseUnit());
-            return new Length(number, Unit.Millimeter);
+            return new Length(length1.ToBaseUnit() + length2.ToBaseUnit(), Unit.Millimeter);
         }
 
         public static Length operator -(Length length1, Length length2)
         {
-            var length1ToCM = length1.ToBaseUnit();
-            var length2ToCM = length2.ToBaseUnit();
-            double number = length1ToCM - length2ToCM;
+            double number = length1.ToBaseUnit() - length2.ToBaseUnit();
             if (number < 0) throw new NegativeValueException();
             return new Length(number, Unit.Millimeter);
         }
@@ -43,14 +31,23 @@ namespace OOWorkshop
             return IsEqual(length.ToBaseUnit(), ToBaseUnit());
         }
 
-        public bool IsEqual(double d1, double d2)
-        {
-            return Math.Abs(d1 - d2) <= 0.000001;
-        }
-
         public override int GetHashCode()
         {
             return ToBaseUnit().GetHashCode();
+        }
+
+        private Unit Unit { get; set; }
+
+        private double Number { get; set; }
+
+        private double ToBaseUnit()
+        {
+            return Number * (int)Unit;
+        }
+
+        private bool IsEqual(double d1, double d2)
+        {
+            return Math.Abs(d1 - d2) <= 0.000001;
         }
     }
 }

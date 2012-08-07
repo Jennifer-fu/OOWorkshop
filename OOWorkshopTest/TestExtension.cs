@@ -5,14 +5,14 @@ namespace OOWorkshopTest
 {
     public static class TestExtension
     {
-        public static void should_be(this Length meter, Length expectedMeter)
+        public static void should_be(this Length length, Length expectedLength)
         {
-            Assert.AreEqual(expectedMeter, meter);
+            Assert.AreEqual(expectedLength, length);
         }
 
-        public static void should_not_be(this Length meter, Length expectedMeter)
+        public static void should_not_be(this Length length, Length expectedLength)
         {
-            Assert.AreNotEqual(expectedMeter, meter);
+            Assert.AreNotEqual(expectedLength, length);
         }
     }
 }
