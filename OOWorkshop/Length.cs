@@ -7,22 +7,27 @@ namespace OOWorkshop
 {
     public abstract class Length
     {
-        public double Number { get; protected set; }
+        protected Length(double number, int factor)
+        {
+            Number = number;
+            Factor = factor;
+        }
 
-        public abstract int Factor();
+        public double Number { get; protected set; }
+        public double Factor { get; protected set; }
 
         public double ConvertToCM()
         {
-            return Number*Factor();
+            return Number*Factor;
         }
 
         public static Length operator +(Length length1, Length length2)
         {
             if (length1 is Meter)
-                return new Meter((length1.ConvertToCM() + length2.ConvertToCM())/length1.Factor());
+                return new Meter((length1.ConvertToCM() + length2.ConvertToCM())/length1.Factor);
             if (length1 is Decimeter)
-                return new Decimeter((length1.ConvertToCM() + length2.ConvertToCM())/length1.Factor());
-            return new Centimeter((length1.ConvertToCM() + length2.ConvertToCM())/length1.Factor());
+                return new Decimeter((length1.ConvertToCM() + length2.ConvertToCM())/length1.Factor);
+            return new Centimeter((length1.ConvertToCM() + length2.ConvertToCM())/length1.Factor);
         }
 
 

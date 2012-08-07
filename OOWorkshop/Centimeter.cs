@@ -7,14 +7,8 @@ namespace OOWorkshop
 {
     public class Centimeter : Length
     {
-        public Centimeter(double number)
+        public Centimeter(double number):base(number,1)
         {
-            Number = number;
-        }
-
-        public override int Factor()
-        {
-            return 1;
         }
     }
 }

@@ -7,14 +7,8 @@ namespace OOWorkshop
 {
     public class Meter : Length
     {
-        public Meter(double number)
+        public Meter(double number):base(number,100)
         {
-            Number = number;
-        }
-
-        public override int Factor()
-        {
-            return 100;
         }
     }
 }
