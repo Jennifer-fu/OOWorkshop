@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OOWorkshop
 {
-    public abstract class Length
+    public class Length
     {
         protected Length(double number, int factor)
         {
