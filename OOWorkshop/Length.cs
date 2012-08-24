@@ -27,8 +27,7 @@ namespace OOWorkshop
 
         public override bool Equals(object obj)
         {
-            var length = (obj as Length);
-            return IsEqual(length.ToBaseUnit(), ToBaseUnit());
+            return IsEqual((obj as Length).ToBaseUnit(), ToBaseUnit());
         }
 
         public override int GetHashCode()
