@@ -1,16 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace OOWorkshop
 {
     public class Length
     {
+        private readonly double number;
+        private readonly Unit unit;
+
         public Length(double number, Unit unit)
         {
-            Number = number;
-            Unit = unit;
+            this.number = number;
+            this.unit = unit;
         }
 
         public static Length operator +(Length length1, Length length2)
@@ -35,13 +35,9 @@ namespace OOWorkshop
             return ToBaseUnit().GetHashCode();
         }
 
-        private Unit Unit { get; set; }
-
-        private double Number { get; set; }
-
         private double ToBaseUnit()
         {
-            return Number*Unit.Factor;
+            return number*unit.Factor;
         }
 
         private bool IsEqual(double d1, double d2)
