@@ -42,7 +42,10 @@ namespace OOWorkshop
 
         private double ToBaseUnit()
         {
-            return Number * (int)Unit;
+            double factor = (int) Unit;
+            if (Unit == Unit.Inch) 
+                factor = 25.4;
+            return Number*factor;
         }
 
         private bool IsEqual(double d1, double d2)
