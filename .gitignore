@@ -10,3 +10,7 @@ OOWorkshop/Properties
 OOWorkshopTest/Properties
 OOWorkshop.csproj
 OOWorkshopTest.csproj
+Local.testsettings
+OOWorkshop.vsmdi
+TestResults/
+TraceAndTestImpact.testsettings
